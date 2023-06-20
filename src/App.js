@@ -4,7 +4,6 @@ import {
   Route,
   createSearchParams,
   useSearchParams,
-  useNavigate,
   useLocation,
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
