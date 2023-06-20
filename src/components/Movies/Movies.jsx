@@ -1,18 +1,17 @@
 import Movie from "../Movie";
+
+// I would suggest importing scss files as modules
 import "./Movies.scss";
 
-const Movies = ({ movies, viewTrailer, closeCard }) => {
+const Movies = ({ movies }) => {
+  if (!movies) {
+    return <div>Loading movies...</div>;
+  }
+
   return (
     <div data-testid="movies">
-      {movies.movies.results?.map((movie) => {
-        return (
-          <Movie
-            movie={movie}
-            key={movie.id}
-            viewTrailer={viewTrailer}
-            closeCard={closeCard}
-          />
-        );
+      {movies.map((movie) => {
+        return <Movie movie={movie} key={movie.id} />;
       })}
     </div>
   );

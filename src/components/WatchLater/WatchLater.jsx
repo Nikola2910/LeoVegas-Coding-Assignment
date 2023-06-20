@@ -1,7 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import watchLaterSlice from "../../data/watchLaterSlice";
+
 import Movie from "../Movie";
+
+import watchLaterSlice from "../../data/watchLaterSlice";
+// I would suggest importing scss files as modules
 import "../../styles/starred.scss";
 
 const WatchLater = ({ viewTrailer }) => {
@@ -20,7 +23,6 @@ const WatchLater = ({ viewTrailer }) => {
               <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
             ))}
           </div>
-
           <footer className="text-center">
             <button
               className="btn btn-primary"
@@ -31,7 +33,6 @@ const WatchLater = ({ viewTrailer }) => {
           </footer>
         </div>
       )}
-
       {watchLater.watchLaterMovies.length === 0 && (
         <div className="text-center empty-cart">
           <i className="bi bi-heart" />
